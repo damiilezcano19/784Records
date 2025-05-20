@@ -1,7 +1,7 @@
 /* --- FUENTE GRETOON PERSONALIZADA --- */
 @font-face {
     font-family: 'Gretoon';
-    src: url('GraffitiCity.otf') format('opentype');
+    src: url('./fonts/GraffitiCity.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('ESTUDIO.JPG.jpg') no-repeat center center fixed;
+    background: #000 url('ESTUDIO.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
 }
@@ -28,9 +28,8 @@ header h1 {
     color: #ff9900;
     font-size: 4em;
     margin-bottom: 10px;
-    -webkit-text-stroke: 2px black; /* borde negro nítido */
+    -webkit-text-stroke: 2px black;
     -moz-text-stroke: 2px black;
-    text-shadow: 2px black;
     text-shadow:
         1px 1px 0 #000,
         2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -38,7 +37,6 @@ header h1 {
     transition: text-shadow 0.3s ease;
 }
 
-/* Animación rebote */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -99,7 +97,6 @@ header p {
     border: 2px solid #ff9900;
 }
 
-/* Íconos personalizados */
 .icono-musica {
     font-size: 3em;
     color: #ff9900;
@@ -124,7 +121,9 @@ header p {
     margin: 40px auto;
 }
 
-form input, form textarea, form button {
+form input,
+form textarea,
+form button {
     display: block;
     width: 90%;
     max-width: 500px;
@@ -139,6 +138,13 @@ form input, form textarea, form button {
 form textarea {
     min-height: 120px;
     resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #ff9900;
+    background-color: #1a1a1a;
+    color: white;
 }
 
 form button {
@@ -194,4 +200,5 @@ footer {
         font-size: 2.5em;
     }
 }
+
 
