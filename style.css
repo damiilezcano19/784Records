@@ -1,7 +1,7 @@
 /* --- FUENTE GRETOON PERSONALIZADA --- */
 @font-face {
     font-family: 'Gretoon';
-    src: url('./GraffitiCity.otf') format('opentype');
+    src: url('GraffitiCity.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -11,63 +11,44 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #000 url(ESTUDIO.JPG.jpg) no-repeat center center fixed;
+    background: url('ESTUDIO.JPG.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
 }
 
-/* Header */
+/* Header con fondo oscuro semitransparente */
 header {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 60px 20px;
+    padding: 60px;
     text-align: center;
+    font-size: 1.5em;
 }
 
+/* Título principal con fuente Gretoon, borde negro y tamaño grande */
 header h1 {
     font-family: 'Gretoon', sans-serif;
     color: #ff9900;
-    font-size: 4em;
+    font-size: 5em;  /* Más grande */
     margin-bottom: 10px;
-    -webkit-text-stroke: 2px black;
+
+    -webkit-text-stroke: 2px black; /* borde negro más fuerte */
+    text-shadow: 2px black;
+
+    /* para mejorar aún más el contraste */
     text-shadow:
-        1px 1px 0 #000,
-        2px 2px 4px rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-    transition: text-shadow 0.3s ease;
+        2px 2px 4px rgba(0,0,0,0.7);
 }
 
-/* Animación rebote */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-        text-shadow:
-            1px 1px 0 #000,
-            2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-    50% {
-        transform: translateY(-10px);
-        text-shadow:
-            2px 2px 0 #000,
-            4px 4px 10px rgba(255, 153, 0, 0.8);
-    }
-}
-
-header h1:hover {
-    animation: bounce 0.5s ease-in-out 2;
-}
-
+/* Subtítulo */
 header p {
     color: #ff9900;
-    font-size: 1.2em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 /* Contenedor general */
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 80%;
     margin: auto;
-    padding: 40px 20px;
+    padding: 40px 0;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
 }
@@ -75,21 +56,20 @@ header p {
 /* Servicios */
 .servicios {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 20px;
 }
 
 .servicio {
     background-color: #1e1e1e;
     padding: 20px;
-    flex: 1 1 30%;
+    width: 30%;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
     border: 2px solid transparent;
     box-shadow: 0 0 10px rgba(255, 153, 0, 0.5);
-    min-width: 250px;
 }
 
 .servicio:hover {
@@ -97,62 +77,52 @@ header p {
     border: 2px solid #ff9900;
 }
 
-/* Íconos personalizados */
+/* Ícono musical animado */
 .icono-musica {
-    font-size: 3em;
     color: #ff9900;
-    margin-bottom: 10px;
-    transition: transform 0.4s ease, color 0.3s;
-    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
 }
 
 .servicio:hover .icono-musica {
-    transform: rotate(10deg) scale(1.2);
-    color: #ffd000;
+    transform: rotate(20deg) scale(1.2);
+}
+
+.servicio img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto 10px;
+    display: block;
 }
 
 /* Contacto */
 .contacto {
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px;
     background-color: rgba(21, 21, 21, 0.8);
     border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
+    width: 80%;
     margin: 40px auto;
 }
 
-form input,
-form textarea,
-form button {
+form input, form textarea, form button {
     display: block;
-    width: 90%;
-    max-width: 500px;
+    width: 80%;
     margin: 10px auto;
     padding: 12px;
     border-radius: 5px;
     border: none;
     font-family: Arial, sans-serif;
-    font-size: 1em;
-}
-
-form textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: 2px solid #ff9900;
-    background-color: #1a1a1a;
-    color: white;
 }
 
 form button {
     background-color: #ff9900;
     color: white;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
+    font-family: Arial, sans-serif;
 }
 
 form button:hover {
@@ -170,35 +140,9 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-    .servicios {
-        justify-content: center;
-    }
-
+@media (max-width: 768px) {
     .servicio {
-        flex: 1 1 45%;
-    }
-
-    header h1 {
-        font-size: 3.5em;
-    }
-}
-
-@media (max-width: 600px) {
-    .servicio {
-        flex: 1 1 100%;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
-
-    .icono-musica {
-        font-size: 2.5em;
+        width: 100%;
     }
 }
 
