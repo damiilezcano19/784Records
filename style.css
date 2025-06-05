@@ -1,4 +1,3 @@
-
 /* --- FUENTE GRETOON PERSONALIZADA --- */
 @font-face {
     font-family: 'Gretoon';
@@ -7,14 +6,52 @@
     font-style: normal;
 }
 
+/* Box sizing global para mejor control */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Gretoon', Arial, sans-serif;
     margin: 0;
-    padding: 40px 0 0 0; /* padding-top para barra fija */
+    padding-top: 45px; /* espacio para barra fija */
     background: url('ESTUDIO.JPG.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
+}
+
+/* Barra superior de redes sociales fija */
+.barra-redes {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 8px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+.container-redes {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.container-redes a img {
+    height: 25px;
+    width: auto;
+    transition: transform 0.3s ease;
+    filter: brightness(1) invert(1);
+}
+
+.container-redes a:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 3px #ff9900);
 }
 
 /* Header con fondo oscuro semitransparente */
@@ -27,15 +64,12 @@ header {
 
 /* Título principal con fuente Gretoon, borde negro y tamaño grande */
 header h1 {
-    font-family: 'Gretoon', sans-serif;
+    font-family: 'Gretoon', Arial, sans-serif;
     color: #ff9900;
     font-size: 5em;  /* Más grande */
     margin-bottom: 10px;
 
     -webkit-text-stroke: 2px black; /* borde negro más fuerte */
-    text-shadow: 2px black;
-
-    /* para mejorar aún más el contraste */
     text-shadow:
         2px 2px 4px rgba(0,0,0,0.7);
 }
@@ -145,70 +179,4 @@ footer {
     .servicio {
         width: 100%;
     }
-}
-
-/* Barra superior de redes sociales fija */
-.barra-redes {
-    src: url(WhatsApp.svg.webp);
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 8px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-}
-
-.container-redes {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.container-redes a img {
-  height: 25px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.container-redes a:hover img {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 3px #ff9900);
-}
-
-.barra-redes {
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 8px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-}
-
-.container-redes {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.container-redes a img {
-  height: 25px;
-  width: auto;
-  transition: transform 0.3s ease;
-  filter: brightness(1) invert(1);
-}
-
-.container-redes a:hover img {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 3px #ff9900);
-}
-
-/* Para que el contenido no quede tapado por la barra fija, agregamos padding top al body */
-body {
-  padding-top: 45px; /* Ajusta este valor si cambia el alto de la barra */
 }
